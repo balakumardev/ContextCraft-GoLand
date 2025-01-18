@@ -1,0 +1,32 @@
+<idea-plugin>
+    <id>dev.balakumar.copy-related-files</id>
+    <name>ContextCraft-GoLand</name>
+    <version>1.0</version>
+    <vendor email="mail@balakumar.dev" url="https://balakumar.dev">BalaKumar.dev</vendor>
+
+    <description><![CDATA[
+        Copies the content of selected file and related files in the same package to clipboard.
+    ]]></description>
+
+    <change-notes><![CDATA[
+        Initial release of the plugin.
+    ]]></change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.go</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <notificationGroup id="Copy Related Files"
+                           displayType="BALLOON"/>
+    </extensions>
+
+    <actions>
+        <action id="CopyRelatedFiles"
+                class="com.example.CopyRelatedFilesAction"
+                text="Copy Go File with Related Files"
+                description="Copy selected Go file and related files to clipboard">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
+        </action>
+    </actions>
+</idea-plugin>
